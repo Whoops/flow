@@ -9,12 +9,19 @@
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = csrf_meta_tag
   %body
-    %header
-      = link_to "RbMU Flow", root_path
-      %nav
-        %ul
+    .header
+      .banner
+        RMU Flow
+      #centerednav
+        %ul.nav
+          %li= link_to "Home", root_path
+          %li= link_to "About", about_path
+          %li= link_to "Mendicant University", "http://university.rubymendicant.com/"
           - if signed_in?
             %li= link_to "Post article", new_article_path
+            %li= link_to "Sign Out", sign_out_path
+          - else
+            %li= link_to "Sign In", sign_in_path
 
     = render_flash_messages
 
