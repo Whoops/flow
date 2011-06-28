@@ -5,3 +5,63 @@
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
 @import compass/reset
+@import compass/typography/lists/inline-block-list
+
+ul.nav
+  +inline-block-list-container
+  margin: auto
+  > li
+    +inline-block-list-item
+
+.header
+  margin: 4px
+  border: 2px solid #000
+
+.nav, .banner
+  display: inline
+
+.banner
+  font-size: 1.5em
+  position: absolute
+  left: 6px
+
+#centerednav
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  overflow: hidden
+
+#centerednav ul
+  clear: left
+  float: left
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+  left: 50%
+  text-align: center
+  overflow: visible
+
+#centerednav ul li
+  display: block
+  float: left
+  list-style: none
+  margin: 0
+  padding: 0
+  position: relative
+  right: 50%
+
+#centerednav ul li a
+  display: block
+  margin: 0 0 0 1px
+  padding: 3px 10px
+  background: #ddd
+  text-decoration: none
+  line-height: 1.3em
+
+#centerednav ul li a:hover
+  background: #369
+
+#centerednav ul li a.active,
+#centerednav ul li a.active:hover
+  font-weight: bold
